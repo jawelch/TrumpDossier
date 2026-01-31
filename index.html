@@ -1,121 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Trump Dossier</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corruption Dossier</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #1a1d24;
+      --text: #e6e6eb;
+      --muted: #a0a4b8;
+      --accent: #b33a3a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #1b1f2a, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #1f2430, var(--card));
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .card svg {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 1.5rem;
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 2.2;
+    }
+
+    .card h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #b33a3a, #7a1f1f);
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 8px 24px rgba(179,58,58,0.35);
+    }
+
+    .cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(179,58,58,0.5);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-  <main class="content">
-    <h1>The Trump Dossier</h1>
-    <p class='lead'>A factual record of unethical, immoral, or widely condemned actions during the Trump administration. Entries are listed below; click "Read more" for full context and sources.</p>
-<div class="timeline-item">
-  <h2 class="entry-title">Relationship With Congressman Matt Gaetz <span class="date">November 2024</span></h2>
-  <p>Matt Gaetz is a long-term ally of President Donald Trump. In November 2024, soon after Trump’s second electoral victory, the president-elect announced he would nominate Gaetz to serve as the Attorney General of the United States. Gaetz had previously been accused of child sex traficking and statuatory rape, and was also arrested for a DUI in 2008. In Decembe…</p>
-  <a class="read-more" href="actions/relationship-with-congressman-matt-gaetz.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Fundraising Based On False Election Claims <span class="date">2020–2021</span></h2>
-  <p>Between November 2020 and January 2021, Donald Trump raised hundreds of millions of dollars from supporters by claiming the money was needed to “defend election integrity.” Investigators later determined that the referenced “Election Defense Fund” never existed, and most funds were instead directed to political committees controlled by Trump rather than legal challenges.</p>
-  <a class="read-more" href="actions/fundraising-false-election-claims.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Pressuring Georgia Attorney General To ‘Find’ New Votes <span class="date">2021</span></h2>
-  <p>On January 2, 2021, during a phone call with Georgia’s Secretary of State, Donald Trump urged him to “find 11,780 votes” to overturn the certified results of the 2020 presidential election. Legal experts argue this request may amount to a criminal attempt to subvert election results — potentially violating both state and federal law. Under Georgia law, a per…</p>
-  <a class="read-more" href="actions/pressuring-georgia-attorney-general-to-find-new-votes.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Lying Record <span class="date">2021</span></h2>
-  <p>According to the Washington Post in January of 2021, President Trump made 30,573 false or misleading claims throughout his first presidential term. No other individual in history has been recorded lying to such an extent.</p>
-  <a class="read-more" href="actions/lying-record.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Private Praise Of Hitler</h2>
-  <p>According to reporting from multiple publications and comments from John Kelly, President Trump’s longest serving chief of staff during the first term, Trump privately praised Adolf Hitler. Trump reportedly said to Kelly — on multiple occasions — that “Hitler did some good things” and said in White House conversations “I need the kind of generals that Hitler…</p>
-  <a class="read-more" href="actions/private-praise-of-hitler.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Trump Campaign Breaks Federal Law Filming In Arlington Cemetery, Physically Accosts Cemetery Employee <span class="date">2024</span></h2>
-  <p>During the 2024 campaign, two Trump aides were involved in a physical altercation with staff at Arlington Cemetery for illegally recording content for the Trump campaign. Arlington Cemetery officials communicated to the campaign ahead of a wreath laying ceremony with the president that any photography or video was prohibited. After a cemetery employee attemp…</p>
-  <a class="read-more" href="actions/trump-campaign-breaks-federal-law-filming-in-arlington-cemetery-physically-accosts-cemetery-employee.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Leaked Signal Groupchat <span class="date">March 2025</span></h2>
-  <p>In March 2025, a group chat on Signal labelled “Houthi PC small group” was set up by Mike Waltz (as National Security Adviser) and included several senior administration officials such as Pete Hegseth (Defense Secretary), Tulsi Gabbard (Director of National Intelligence), John Ratcliffe (CIA Director), Vice President J.D. Vance, Secretary of State Marco Rubi…</p>
-  <a class="read-more" href="actions/leaked-signal-groupchat.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Trump Administration Threatens To Investigate Deporting Zohran Mamdani <span class="date">July 2025</span></h2>
-  <p>President Trump has threatened to deport Zohran Mamdani, the Democratic nominee to be mayor of New York City and naturalized citizen. Zohran Mamdani is a U.S. citizen who was naturalized in 2018. In July 2025, Trump said “We don’t need a communist in this country, but if we have one, I’m going to be watching over him very carefully on behalf of the nation. W…</p>
-  <a class="read-more" href="actions/trump-administration-threatens-to-investigate-deporting-zohran-mamdani.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Trump-Branded Wine Sold In Coast Guard Stores <span class="date">November 2025</span></h2>
-  <p>In November 2025, Trump-branded wine and cider started being sold at U.S. Coast Guard Exchange stores, which operate on federal property and serve military personnel and their families. The move raises over potential conflicts of interest, as it allows a business connected to Donald Trump to profit from sales within government-run facilities.</p>
-  <a class="read-more" href="actions/trump-branded-wine-sold-in-coast-guard-stores.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Secretary Of Homeland Security Kristi Noem Makes Partisan Tsa Message, Potential Hatch Act Violation <span class="date">October 2025</span></h2>
-  <p>In October 2025, the Department of Homeland Security under Secretary Kristi Noem released a short video intended to play at airport security checkpoints via the Transportation Security Administration. In the video, Noem states:</p>
-  <a class="read-more" href="actions/secretary-of-homeland-security-kristi-noem-makes-partisan-tsa-message-potential-hatch-act-violation.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Attempts To Overturn Birthright Citizenship <span class="date">January 2025</span></h2>
-  <p>Donald Trump has repeatedly proposed ending birthright citizenship — a right explicitly guaranteed by the 14th Amendment of the U.S. Constitution. On his first day of a second term in January 2025, Trump signed an executive order attempting to deny automatic citizenship to children born in the U.S. to undocumented immigrants or parents on temporary visas. Legal scholars across the political spectrum argued the order was plainly unconstitutional, and federal courts quickly blocked its implementation…</p>
-  <a class="read-more" href="actions/attempts-to-overturn-birthright-citizenship.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">January 6 Attack On The U.S. Capitol <span class="date">January 2021</span></h2>
-  <p>On January 6, 2021, as Congress met to certify the Electoral College results, a mob of Donald Trump’s supporters violently stormed the U.S. Capitol after weeks of false claims by Trump that the election had been “rigged.” At a rally just before the attack, Trump told supporters to “fight like hell” and urged them to march to the Capitol. As the violence unfolded, Trump resisted repeated pleas to intervene and instead criticized Vice President Mike Pence, escalating the danger to lawmakers…</p>
-  <a class="read-more" href="actions/january-6-attack-on-the-u-s-capitol.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Pressure on Georgia Election Investigator Frances Watson <span class="date">December 2020</span></h2>
-  <p>In December 2020, Donald Trump personally called Georgia chief elections investigator Frances Watson while she was conducting a ballot signature audit. During the call, Trump urged her to “find the dishonesty” in the ballots and suggested she would be “praised” or become a “national hero” if she uncovered fraud, raising concerns that he was improperly pressuring a state official to influence an ongoing election investigation…</p>
-  <a class="read-more" href="actions/pressure-on-georgia-election-investigator-frances-watson.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Pressure On State Officials And Legislatures To Overturn Certified Election Results <span class="date">November–December 2020</span></h2>
-  <p>Following the 2020 election, Donald Trump pressured governors, state legislators, election officials, and county canvassers in multiple battleground states to overturn or delay certification of lawful results. After courts rejected his fraud claims, Trump and his allies urged officials to decertify results or appoint alternate electors despite lacking any legal authority to do so…</p>
-  <a class="read-more" href="actions/pressure-on-state-officials-and-legislatures-to-overturn-certified-election-results.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Creation And Promotion Of “Alternate” Elector Slates <span class="date">December 2020–January 2021</span></h2>
-  <p>After losing the 2020 election, Donald Trump and his allies coordinated efforts across seven states to create and submit fraudulent “alternate” slates of electors despite certified Biden victories. The false certificates were designed to create a pretext for rejecting or delaying legitimate electoral votes during Congress’s January 6 certification…</p>
-  <a class="read-more" href="actions/creation-and-promotion-of-alternate-elector-slates.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Pressure On Mike Pence To Block Electoral Certification <span class="date">January 2021</span></h2>
-  <p>In the weeks and days leading up to January 6, 2021, Donald Trump repeatedly pressured Vice President Mike Pence to refuse or delay certification of the Electoral College results, despite Pence having no constitutional authority to alter the outcome. Trump’s efforts included private calls, public statements, and rally remarks escalating pressure on Pence…</p>
-  <a class="read-more" href="actions/pressure-on-mike-pence.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Pressuring The Department Of Justice To Declare The Election Corrupt <span class="date">November 2020–January 2021</span></h2>
-  <p>Between November 2020 and January 2021, Donald Trump repeatedly pressured senior Department of Justice officials to publicly declare the election “corrupt,” despite being told by DOJ leadership that no evidence existed to support such claims. Trump urged officials to make false statements to justify overturning the election…</p>
-  <a class="read-more" href="actions/pressuring-the-department-of-justice-to-declare-the-election-corrupt.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Attempt To Install Jeffrey Clark As Acting Attorney General <span class="date">January 2021</span></h2>
-  <p>After senior DOJ officials refused to support false claims of election fraud, Donald Trump attempted to replace the acting attorney general with Jeffrey Clark, a DOJ official willing to send letters urging states to overturn certified results. The plan collapsed only after top DOJ leaders threatened mass resignation…</p>
-  <a class="read-more" href="actions/attempt-to-install-jeffrey-clark-as-acting-attorney-general.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Coordinated Disinformation Campaign Despite Knowing Claims Were False <span class="date">2020–2021</span></h2>
-  <p>After the 2020 election, Donald Trump continued promoting claims of widespread fraud despite being told by his own campaign staff, the Department of Justice, DHS, and state officials that the allegations were false. Investigators later concluded that Trump knowingly spread disinformation to justify broader efforts to overturn the election…</p>
-  <a class="read-more" href="actions/coordinated-disinformation-campaign.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Efforts To Facilitate Unauthorized Access To Local Voting Equipment <span class="date">2020–2021</span></h2>
-  <p>Following the 2020 election, Trump allies pursued efforts in multiple states to gain unauthorized access to voting machines and election-system software. These activities occurred after results had been certified and were intended to support false claims of election fraud, triggering state and federal investigations…</p>
-  <a class="read-more" href="actions/efforts-to-facilitate-unauthorized-access-to-local-voting-equipment.html">Read more →</a>
-</div>
-<div class="timeline-item">
-  <h2 class="entry-title">Donald Trump Jr. – Pentagon Loan Conflict Of Interest <span class="date">2025</span></h2>
-  <p>A rare-earth magnet startup backed by 1789 Capital, where Donald Trump Jr. is a partner, received a $620 million conditional Pentagon loan despite having a small workforce and limited operational history. Ethics experts argue the deal creates a serious appearance of favoritism tied to the president’s family…</p>
-  <a class="read-more" href="actions/donald-trump-jr-pentagon-loan-conflict.html">Read more →</a>
-</div>
+  <div class="container">
+    <header>
+      <h1>Corruption Dossier</h1>
+      <p>
+        Donald Trump’s career and effect on the politics of the United States will forever leave a blemish on the tapestry of American history. His record of political, financial, and moral corruption is so overwhelming the American electorate can be forgiven for failing to maintain a precise recollection of it all. The purpose of this site is to create a full account of every unjustifiable infraction of the American spirit committed by the President and his administration. Though his crimes and sins have been well documented through various media organizations, non-profits, judicial, and federal records, this site provides a centralized collection for the ease of the reader.
+      </p>
+    </header>
 
-  </main>
+    <section class="cards">
+      <div class="card">
+        <!-- Political Corruption Icon: Cracked Capitol -->
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M12 28h40" />
+          <path d="M16 28v20m8-20v20m8-20v20m8-20v20" />
+          <path d="M10 52h44" />
+          <path d="M20 12l12-6 12 6" />
+          <path d="M32 6v10" />
+          <path d="M30 22l4 6-6 8" />
+        </svg>
+        <h2>Political Corruption</h2>
+        <p>
+          Abuse of authority, regulatory capture, and the manipulation of democratic processes
+          to entrench power and silence accountability.
+        </p>
+      </div>
+
+      <div class="card">
+        <!-- Moral Corruption Icon: Scales Cracking -->
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 10v36" />
+          <path d="M18 18h28" />
+          <path d="M12 18l6 12h-12l6-12z" />
+          <path d="M46 18l6 12h-12l6-12z" />
+          <path d="M26 36l4 6-6 10" />
+        </svg>
+        <h2>Moral Corruption</h2>
+        <p>
+          Normalization of cruelty, erosion of ethical standards, and the quiet justifications
+          that allow wrongdoing to become routine.
+        </p>
+      </div>
+
+      <div class="card">
+        <!-- Financial Corruption Icon: Broken Coin -->
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="22" />
+          <path d="M20 32h24" />
+          <path d="M32 20v24" />
+          <path d="M28 24l8 8-10 12" />
+        </svg>
+        <h2>Financial Corruption</h2>
+        <p>
+          Insider trading, self‑dealing, and the conversion of public office into a personal
+          revenue stream.
+        </p>
+      </div>
+    </section>
+
+    <div class="cta">
+      <a href="dossier.html">Enter the Dossier</a>
+    </div>
+
+    <footer>
+      <p>Documentation over outrage. Evidence over rhetoric.</p>
+    </footer>
+  </div>
 </body>
 </html>
