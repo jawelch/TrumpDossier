@@ -1,51 +1,75 @@
-/* Core layout for site entries */
+/* Core entry layout */
 .site-entry {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 780px;
+  margin: 3rem auto;
+  padding: 0 20px;
+  font-family: "Merriweather", Georgia, serif;
   line-height: 1.6;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
 }
 
-/* Titles and subtitles */
+/* Main title */
 .site-entry h2 {
-  font-size: 1.75rem;
-  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.2em 0;
 }
 
+/* Year or subtitle */
 .site-entry h3 {
-  font-size: 1.1rem;
-  margin-top: 0.25rem;
-  color: #555;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+  margin: 0 0 1.5em 0;
 }
 
+/* Section headers */
 .site-entry h4 {
-  font-size: 1.15rem;
-  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.6em 0 0.4em 0;
 }
 
-/* Paragraph spacing */
+/* Paragraphs */
 .site-entry p {
-  margin: 1rem 0;
+  margin: 0.9em 0;
+  font-size: 1rem;
+  color: #111;
 }
 
-/* Source list styling */
+/* Source list */
 .site-entry .sources {
   list-style: none;
   padding-left: 0;
-  margin-top: 1rem;
+  margin-top: 1.2em;
 }
 
 .site-entry .sources li {
-  margin-bottom: 0.5rem;
-  word-break: break-word;
+  margin-bottom: 0.5em;
   font-size: 0.95rem;
+  color: #111;
+  word-break: break-word;
 }
 
-/* Mobile readability */
+/* Links inside entries */
+.site-entry a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.site-entry a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .site-entry {
-    padding: 0 0.75rem;
+    padding: 0 12px;
+    margin: 2rem auto;
+  }
+
+  .site-entry h2 {
+    font-size: 1.6rem;
   }
 }
