@@ -63,6 +63,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>The Dossier</h1>
@@ -71,171 +72,35 @@
       Categories will be introduced once the historical record is complete.
     </p>
 
-    <ul>
-      <!-- Add entries below in chronological order -->
-      <li>
-        <span class="date">January 27, 2017</span>
-        <a href="actions/2017-01-27-muslim-ban.html">
-          Executive Order 13769 (Muslim Ban)
-        </a>
-      </li>
-
-      <li>
-        <span class="date">July 25, 2019</span>
-        <a href="actions/2019-07-25-ukraine-call.html">
-          Ukraine Phone Call and Abuse of Presidential Power
-        </a>
- <li>
-  <span class="date">2018–2020</span>
-  <a href="actions/private-praise-of-hitler.html">
-    Private Praise of Adolf Hitler
-  </a>
-</li>
-
-<li>
-  <span class="date">2019</span>
-  <a href="actions/donald-trump-jr-pentagon-loan-conflict.html">
-    Donald Trump Jr. Pentagon Loan Conflict
-  </a>
-</li>
-
-<li>
-  <span class="date">2019–2020</span>
-  <a href="actions/trump-branded-wine-sold-in-coast-guard-stores.html">
-    Trump-Branded Wine Sold in Coast Guard Stores
-  </a>
-</li>
-
-<li>
-  <span class="date">2020</span>
-  <a href="actions/lying-record.html">
-    Documented Record of False Statements
-  </a>
-</li>
-
-<li>
-  <span class="date">November–December 2020</span>
-  <a href="actions/coordinated-disinformation-campaign.html">
-    Coordinated Disinformation Campaign Regarding the 2020 Election
-  </a>
-</li>
-
-<li>
-  <span class="date">November–December 2020</span>
-  <a href="actions/fundraising-based-on-false-election-claims.html">
-    Fundraising Based on False Election Claims
-  </a>
-</li>
-
-<li>
-  <span class="date">November–December 2020</span>
-  <a href="actions/pressure-on-state-officials-az-mi-pa.html">
-    Pressure on State Election Officials in Arizona, Michigan, and Pennsylvania
-  </a>
-</li>
-
-<li>
-  <span class="date">December 2020</span>
-  <a href="actions/pressuring-georgia-attorney-general-to-find-new-votes.html">
-    Pressuring the Georgia Attorney General to “Find” Votes
-  </a>
-</li>
-
-<li>
-  <span class="date">December 2020</span>
-  <a href="actions/pressure-on-georgia-election-investigator-frances-watson.html">
-    Pressure on Georgia Election Investigator Frances Watson
-  </a>
-</li>
-
-<li>
-  <span class="date">December 2020</span>
-  <a href="actions/creation-and-promotion-of-alternate-elector-slates.html">
-    Creation and Promotion of Alternate Elector Slates
-  </a>
-</li>
-
-<li>
-  <span class="date">December 2020</span>
-  <a href="actions/efforts-to-facilitate-unauthorized-access-to-local-voting-equipment.html">
-    Efforts to Facilitate Unauthorized Access to Voting Equipment
-  </a>
-</li>
-
-<li>
-  <span class="date">December 2020</span>
-  <a href="actions/pressuring-the-department-of-justice-to-declare-the-election-corrupt.html">
-    Pressuring the Department of Justice to Declare the Election Corrupt
-  </a>
-</li>
-
-<li>
-  <span class="date">January 2021</span>
-  <a href="actions/attempt-to-install-jeffrey-clark-as-acting-attorney-general.html">
-    Attempt to Install Jeffrey Clark as Acting Attorney General
-  </a>
-</li>
-
-<li>
-  <span class="date">January 2021</span>
-  <a href="actions/pressure-on-mike-pence.html">
-    Pressure on Vice President Mike Pence to Overturn the Election
-  </a>
-</li>
-
-<li>
-  <span class="date">January 6, 2021</span>
-  <a href="actions/january-6-attack-on-the-u-s-capitol.html">
-    January 6 Attack on the U.S. Capitol
-  </a>
-</li>
-
-<li>
-  <span class="date">2023</span>
-  <a href="actions/leaked-signal-groupchat.html">
-    Leaked Signal Group Chat
-  </a>
-</li>
-
-<li>
-  <span class="date">2024</span>
-  <a href="actions/relationship-with-congressman-matt-gaetz.html">
-    Relationship with Congressman Matt Gaetz
-  </a>
-</li>
-
-<li>
-  <span class="date">2024</span>
-  <a href="actions/trump-campaign-breaks-federal-law-filming-in-arlington-cemetery-physically-accosts-cemetery-employee.html">
-    Trump Campaign Breaks Federal Law Filming in Arlington Cemetery
-  </a>
-</li>
-
-<li>
-  <span class="date">2025</span>
-  <a href="actions/attempts-to-overturn-birthright-citizenship.html">
-    Attempts to Overturn Birthright Citizenship
-  </a>
-</li>
-
-<li>
-  <span class="date">2025</span>
-  <a href="actions/secretary-of-homeland-security-kristi-noem-makes-partisan-tsa-message-potential-hatch-act-violation.html">
-    Partisan TSA Messaging by Secretary of Homeland Security (Potential Hatch Act Violation)
-  </a>
-</li>
-
-<li>
-  <span class="date">2025</span>
-  <a href="actions/trump-administration-threatens-to-investigate-deporting-zohran-mamdani.html">
-    Threats to Investigate and Deport Zohran Mamdani
-  </a>
-</li>
-
+    <ul id="dossier-list"></ul>
 
     <footer>
       <p><a href="index.html">← Return to Introduction</a></p>
     </footer>
   </div>
+
+  <script>
+    fetch('/actions/index.json')
+      .then(response => response.json())
+      .then(entries => {
+        const list = document.getElementById('dossier-list');
+
+        entries.forEach(entry => {
+          const li = document.createElement('li');
+
+          li.innerHTML = `
+            <span class="date">${entry.date}</span>
+            <a href="actions/${entry.slug}">
+              ${entry.title}
+            </a>
+          `;
+
+          list.appendChild(li);
+        });
+      })
+      .catch(err => {
+        console.error('Failed to load dossier entries', err);
+      });
+  </script>
 </body>
 </html>
