@@ -1,93 +1,82 @@
-/* Base layout */
-.content {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+/* Core layout */
+main.content {
   max-width: 780px;
-  margin: 64px auto;
+  margin: 64px auto 80px auto;
   padding: 0 20px;
-  line-height: 1.65;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #111;
-  background: #fff;
+  line-height: 1.65;
 }
 
-/* Titles */
-.content h1 {
-  font-size: 2.1em;
+/* Title */
+main.content h1 {
+  font-size: 1.9em;
   font-weight: 700;
   margin-bottom: 0.3em;
   letter-spacing: -0.01em;
 }
 
-.content h2 {
-  font-size: 1.25em;
-  font-weight: 600;
-  margin-top: 2.0em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* Date / metadata */
-.content .date {
+/* Date or metadata */
+main.content .date {
   font-size: 0.9em;
   color: #666;
   margin-bottom: 1.6em;
 }
 
+/* Section headers */
+main.content h2 {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 /* Paragraphs */
-.content p {
-  margin: 1.0em 0;
-  font-size: 1.0em;
-}
-
-/* Lead paragraph */
-.content p.lead {
-  font-size: 1.05em;
-  color: #333;
-  margin-top: 0.6em;
-  margin-bottom: 1.4em;
-}
-
-/* Lists */
-.content ul {
-  margin: 1.0em 0 1.2em 1.2em;
-}
-
-.content li {
-  margin: 0.4em 0;
+main.content p {
+  margin: 0.9em 0;
 }
 
 /* Links */
-.content a {
-  color: #005fcc;
+main.content a {
+  color: #0b5fd7;
   text-decoration: none;
 }
 
-.content a:hover {
+main.content a:hover {
   text-decoration: underline;
 }
 
-/* Sources section */
-.content .sources {
-  margin-top: 2.4em;
-  padding-top: 1.2em;
-  border-top: 1px solid #e5e5e5;
-  font-size: 0.9em;
+/* Lists */
+main.content ul {
+  margin: 0.8em 0 1.2em 1.2em;
 }
 
-.content .sources a {
+main.content li {
+  margin: 0.4em 0;
+}
+
+/* Sources section */
+main.content .sources {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.95em;
+}
+
+main.content .sources a {
   display: block;
-  margin: 0.3em 0;
-  word-break: break-word;
+  margin: 0.35em 0;
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-  .content {
-    margin: 40px auto;
+  main.content {
     padding: 0 14px;
   }
 
-  .content h1 {
-    font-size: 1.7em;
+  main.content h1 {
+    font-size: 1.6em;
   }
 }
