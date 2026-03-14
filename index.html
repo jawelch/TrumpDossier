@@ -71,6 +71,8 @@
       fill: none;
       stroke: var(--accent);
       stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .card h2 {
@@ -120,20 +122,35 @@
     <header>
       <h1>Corruption Dossier</h1>
       <p>
-        Donald Trump’s career and effect on the politics of the United States will forever leave a blemish on the tapestry of American history. His record of political, financial, and moral corruption is so overwhelming the American electorate can be forgiven for failing to maintain a precise recollection of it all. The purpose of this site is to create a full account of every unjustifiable infraction of the American spirit committed by the President and his administration. Though his crimes and sins have been well documented through various media organizations, non-profits, judicial, and federal records, this site provides a centralized collection for the ease of the reader.
+        Donald Trump's career and effect on the politics of the United States will forever leave a blemish on the tapestry of American history. His record of political, financial, and moral corruption is so overwhelming the American electorate can be forgiven for failing to maintain a precise recollection of it all. The purpose of this site is to create a full account of every unjustifiable infraction of the American spirit committed by the President and his administration. Though his crimes and sins have been well documented through various media organizations, non-profits, judicial, and federal records, this site provides a centralized collection for the ease of the reader.
       </p>
     </header>
 
     <section class="cards">
+
+      <!-- POLITICAL: Broken Column -->
       <div class="card">
-        <!-- Political Corruption Icon: Cracked Capitol -->
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M12 28h40" />
-          <path d="M16 28v20m8-20v20m8-20v20m8-20v20" />
-          <path d="M10 52h44" />
-          <path d="M20 12l12-6 12 6" />
-          <path d="M32 6v10" />
-          <path d="M30 22l4 6-6 8" />
+        <svg viewBox="0 0 120 120" aria-label="Broken column" style="width:96px;height:96px;margin-bottom:1.5rem;fill:none;stroke:#b33a3a;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;">
+          <rect x="6" y="110" width="108" height="5" rx="1" />
+          <rect x="10" y="105" width="32" height="5" rx="0.5" />
+          <line x1="12" y1="38" x2="12" y2="105" />
+          <line x1="18" y1="38" x2="18" y2="105" />
+          <line x1="24" y1="38" x2="24" y2="105" />
+          <line x1="30" y1="38" x2="30" y2="105" />
+          <line x1="38" y1="38" x2="38" y2="105" />
+          <line x1="11" y1="38" x2="39" y2="38" />
+          <path d="M13,38 Q12,32 10,30" fill="none"/>
+          <path d="M37,38 Q38,32 40,30" fill="none"/>
+          <rect x="7" y="25" width="36" height="5" rx="0.5" />
+          <path d="M7,27.5 C3,27 1,23 3,20 C5,17.5 9,18.5 9,21 C9,23.5 6.5,24 6,23" fill="none"/>
+          <path d="M43,27.5 C47,27 49,23 47,20 C45,17.5 41,18.5 41,21 C41,23.5 43.5,24 44,23" fill="none"/>
+          <rect x="74" y="105" width="36" height="5" rx="0.5" />
+          <line x1="76" y1="80" x2="76" y2="105" />
+          <line x1="82" y1="80" x2="82" y2="105" />
+          <line x1="88" y1="80" x2="88" y2="105" />
+          <line x1="94" y1="80" x2="94" y2="105" />
+          <line x1="100" y1="80" x2="100" y2="105" />
+          <polyline points="75,80 79,74 83,80 87,72 91,79 95,71 99,78 101,80" />
         </svg>
         <h2>Political Corruption</h2>
         <p>
@@ -142,14 +159,19 @@
         </p>
       </div>
 
+      <!-- MORAL: Balance Scale -->
       <div class="card">
-        <!-- Moral Corruption Icon: Scales Cracking -->
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M32 10v36" />
-          <path d="M18 18h28" />
-          <path d="M12 18l6 12h-12l6-12z" />
-          <path d="M46 18l6 12h-12l6-12z" />
-          <path d="M26 36l4 6-6 10" />
+        <svg viewBox="0 0 64 64" aria-label="Balance scale">
+          <line x1="32" y1="10" x2="32" y2="52" />
+          <line x1="22" y1="52" x2="42" y2="52" />
+          <line x1="8" y1="30" x2="56" y2="14" />
+          <line x1="8" y1="30" x2="5" y2="44" />
+          <line x1="8" y1="30" x2="16" y2="44" />
+          <path d="M3,44 Q10.5,51 18,44" fill="none" />
+          <line x1="56" y1="14" x2="52" y2="24" />
+          <line x1="56" y1="14" x2="60" y2="24" />
+          <path d="M50,24 Q56,30 62,24" fill="none" />
+          <circle cx="32" cy="10" r="2.5" />
         </svg>
         <h2>Moral Corruption</h2>
         <p>
@@ -158,13 +180,16 @@
         </p>
       </div>
 
+      <!-- FINANCIAL: Cracked Coin -->
       <div class="card">
-        <!-- Financial Corruption Icon: Broken Coin -->
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="22" />
-          <path d="M20 32h24" />
-          <path d="M32 20v24" />
-          <path d="M28 24l8 8-10 12" />
+        <svg viewBox="0 0 96 96" aria-label="Cracked coin" style="width:96px;height:96px;margin-bottom:1.5rem;fill:none;stroke-linecap:round;stroke-linejoin:round;">
+          <circle cx="48" cy="48" r="44" stroke="#ffffff" stroke-width="2.5"/>
+          <circle cx="48" cy="48" r="38" stroke="#ffffff" stroke-width="1"/>
+          <path d="M62,28 C62,20 34,20 34,34 C34,48 62,44 62,58 C62,72 34,72 34,64" stroke="#ffffff" stroke-width="2.2"/>
+          <line x1="48" y1="16" x2="48" y2="72" stroke="#ffffff" stroke-width="2.2"/>
+          <polyline points="22,10 36,24 26,40 44,54 38,68 54,86" stroke="#b33a3a" stroke-width="6.5" stroke-linejoin="miter" stroke-linecap="square"/>
+          <line x1="36" y1="24" x2="54" y2="30" stroke="#b33a3a" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="square"/>
+          <line x1="44" y1="54" x2="28" y2="64" stroke="#b33a3a" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="square"/>
         </svg>
         <h2>Financial Corruption</h2>
         <p>
@@ -172,6 +197,7 @@
           revenue stream.
         </p>
       </div>
+
     </section>
 
     <div class="cta">
