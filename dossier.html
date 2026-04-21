@@ -4,102 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Dossier</title>
-
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0f1115;
-      color: #e6e6eb;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --surface: #141414; --border: #222; --border-subtle: #1a1a1a;
+      --text: #e8e8e8; --muted: #666; --dim: #444; --gold: #d4a017;
+      --gold-bg: #1e1a0e; --gold-border: #2e260f;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    h1 {
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      color: #a0a4b8;
-      margin-bottom: 3rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid #222;
-    }
-
-    .date {
-      display: block;
-      font-size: 0.85rem;
-      color: #777;
-      margin-bottom: 0.25rem;
-      letter-spacing: 0.05em;
-    }
-
-    a {
-      color: #e6e6eb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #b33a3a;
-    }
-
-    footer {
-      margin-top: 4rem;
-      font-size: 0.85rem;
-      color: #777;
-    }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { background: var(--bg); border-bottom: 0.5px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 52px; }
+    .nav-logo { font-size: 13px; font-weight: 500; color: var(--text); letter-spacing: 0.08em; text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+    .page-header { border-bottom: 0.5px solid var(--border); padding-bottom: 2rem; margin-bottom: 2rem; }
+    .eyebrow { font-size: 10px; color: var(--gold); letter-spacing: 0.12em; font-weight: 500; margin-bottom: 0.75rem; }
+    h1 { font-size: 1.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--text); margin-bottom: 0.75rem; font-family: Georgia, "Times New Roman", serif; }
+    .subtitle { color: var(--muted); font-size: 0.875rem; line-height: 1.7; max-width: 580px; }
+    .stats { display: flex; gap: 2rem; margin-top: 1.5rem; }
+    .stat-num { font-size: 1.25rem; font-weight: 500; color: var(--gold); }
+    .stat-label { font-size: 10px; color: var(--dim); letter-spacing: 0.05em; margin-top: 2px; }
+    #dossier-list { list-style: none; }
+    .entry { border-bottom: 0.5px solid var(--border-subtle); padding: 1.25rem 0; display: grid; grid-template-columns: 80px 1fr auto; gap: 1rem; align-items: start; }
+    .entry:hover { background: transparent; }
+    .entry-num { font-size: 11px; color: var(--dim); font-weight: 500; padding-top: 2px; font-variant-numeric: tabular-nums; }
+    .entry-date { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 4px; }
+    .entry a { color: var(--text); text-decoration: none; font-size: 0.9rem; line-height: 1.5; transition: color 0.15s; }
+    .entry a:hover { color: var(--gold); }
+    footer { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--border-subtle); font-size: 11px; color: var(--dim); letter-spacing: 0.04em; }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    footer a:hover { color: var(--gold); }
+    .loading { color: var(--dim); font-size: 0.875rem; padding: 2rem 0; }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>The Dossier</h1>
-    <p class="subtitle">
-      A chronological record of political, financial, and moral corruption.
-      Categories will be introduced once the historical record is complete.
-    </p>
+  <nav>
+    <a class="nav-logo" href="index.html">THE <span>DOSSIER</span></a>
+    <div class="nav-links">
+      <a href="index.html">Introduction</a>
+      <a href="dossier.html" class="active">All entries</a>
+    </div>
+  </nav>
 
-    <ul id="dossier-list"></ul>
+  <div class="container">
+    <div class="page-header">
+      <div class="eyebrow">Complete record</div>
+      <h1>The Dossier</h1>
+      <p class="subtitle">A chronological record of political, financial, and moral corruption. Each entry sourced and documented.</p>
+      <div class="stats">
+        <div>
+          <div class="stat-num" id="entry-count">—</div>
+          <div class="stat-label">Documented entries</div>
+        </div>
+      </div>
+    </div>
+
+    <ul id="dossier-list">
+      <li class="loading">Loading entries&hellip;</li>
+    </ul>
 
     <footer>
-      <p><a href="index.html">← Return to Introduction</a></p>
+      <p><a href="index.html">&larr; Return to introduction</a> &nbsp;&middot;&nbsp; Documentation over outrage. Evidence over rhetoric.</p>
     </footer>
   </div>
 
   <script>
-    fetch('/actions/index.json')
-      .then(response => response.json())
+    fetch('actions/index.json')
+      .then(r => r.json())
       .then(entries => {
         const list = document.getElementById('dossier-list');
-
-        entries.forEach(entry => {
+        document.getElementById('entry-count').textContent = entries.length;
+        list.innerHTML = '';
+        entries.forEach((entry, i) => {
           const li = document.createElement('li');
-
-          li.innerHTML = `
-            <span class="date">${entry.date}</span>
-            <a href="actions/${entry.slug}">
-              ${entry.title}
-            </a>
-          `;
-
+          li.className = 'entry';
+          li.innerHTML =
+            '<div class="entry-num">#' + String(entries.length - i).padStart(3, '0') + '</div>' +
+            '<div>' +
+              '<div class="entry-date">' + (entry.displaydate || entry.date) + '</div>' +
+              '<a href="actions/' + entry.slug + '">' + entry.title + '</a>' +
+            '</div>';
           list.appendChild(li);
         });
       })
-      .catch(err => {
-        console.error('Failed to load dossier entries', err);
+      .catch(() => {
+        document.getElementById('dossier-list').innerHTML = '<li class="loading">Failed to load entries.</li>';
       });
   </script>
 </body>
