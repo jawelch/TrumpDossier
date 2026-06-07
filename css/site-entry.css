@@ -138,9 +138,10 @@ main.content .date {
   margin-bottom: 2rem;
 }
 
-/* ── BODY PARAGRAPHS ── */
-/* First <p> after .date gets lede treatment */
-main.content .date + p {
+/* ── SUMMARY / LEDE ── */
+/* Add class="summary" to a <p> in your HTML to get this treatment.
+   If omitted, the first body paragraph renders as normal body text. */
+main.content p.summary {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   font-style: italic;
@@ -151,12 +152,7 @@ main.content .date + p {
   margin-bottom: 2.5rem;
 }
 
-/* Body divider before first body paragraph */
-main.content .date + p + p {
-  border-top: 0.5px solid var(--border);
-  padding-top: 2rem;
-}
-
+/* ── BODY PARAGRAPHS ── */
 main.content p {
   font-size: 0.95rem;
   line-height: 1.85;
