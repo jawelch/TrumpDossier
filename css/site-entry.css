@@ -108,6 +108,17 @@ main.content {
 .tag-political { background: #1a0e2a;          color: #a07fd4;       border: 0.5px solid #241636; }
 .tag-financial { background: #0e1a2a;          color: #5a9fd4;       border: 0.5px solid #162436; }
 
+/* ── CATEGORY TAGS (multiple per entry) ── */
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+.entry-tags .entry-tag {
+  margin-bottom: 0; /* override single-tag spacing since the wrapper handles it now */
+}
+
 /* ── TITLE ── */
 main.content h1 {
   font-family: Georgia, "Times New Roman", serif;
