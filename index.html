@@ -25,7 +25,7 @@
     header p { max-width: 680px; margin: 0 auto; color: var(--muted); font-size: 0.95rem; line-height: 1.8; }
     .divider { width: 40px; height: 1px; background: var(--gold); margin: 2rem auto; opacity: 0.5; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 4rem; }
-    .card { background: var(--surface); padding: 2.5rem 2rem; text-align: center; transition: background 0.15s; }
+    .card { background: var(--surface); padding: 2.5rem 2rem; text-align: center; transition: background 0.15s; display: block; text-decoration: none; color: inherit; cursor: pointer; }
     .card:hover { background: #181818; }
     .card-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; }
     .card-icon svg { width: 64px; height: 64px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
@@ -35,6 +35,8 @@
     .tag-financial { background: #0e1a2a; color: #5a9fd4; border: 0.5px solid #162436; }
     .tag-political  { background: #1a0e2a; color: #a07fd4; border: 0.5px solid #241636; }
     .tag-moral      { background: var(--gold-bg); color: var(--gold); border: 0.5px solid var(--gold-border); }
+    .card-cta { margin-top: 1.25rem; font-size: 10px; color: var(--dim); letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.15s; }
+    .card:hover .card-cta { color: var(--gold); }
     .cta { text-align: center; }
     .cta a { display: inline-block; padding: 0.85rem 2.5rem; border: 0.5px solid var(--gold-border); border-radius: 4px; background: var(--gold-bg); color: var(--gold); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; transition: background 0.15s, border-color 0.15s; }
     .cta a:hover { background: #2a2310; border-color: var(--gold); }
@@ -57,7 +59,7 @@
       <p>Donald Trump's career and effect on the politics of the United States will forever leave a blemish on the tapestry of American history. His record of political, financial, and moral corruption is so overwhelming the American electorate can be forgiven for failing to maintain a precise recollection of it all. The purpose of this site is to create a full account of every unjustifiable infraction of the American spirit committed by the President and his administration. Though his crimes and sins have been well documented through various media organizations, non-profits, judicial, and federal records, this site provides a centralized collection for the ease of the reader.</p>
     </header>
     <section class="cards">
-      <div class="card">
+      <a class="card" href="dossier.html?category=political">
         <div class="card-tag tag-political">Political</div>
         <div class="card-icon">
           <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -75,8 +77,9 @@
         </div>
         <h2>Political Corruption</h2>
         <p>Abuse of authority, regulatory capture, and the manipulation of democratic processes to entrench power and silence accountability.</p>
-      </div>
-      <div class="card">
+        <div class="card-cta">View entries &rarr;</div>
+      </a>
+      <a class="card" href="dossier.html?category=moral">
         <div class="card-tag tag-moral">Moral</div>
         <div class="card-icon">
           <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -91,8 +94,9 @@
         </div>
         <h2>Moral Corruption</h2>
         <p>Normalization of cruelty, erosion of ethical standards, and the quiet justifications that allow wrongdoing to become routine.</p>
-      </div>
-      <div class="card">
+        <div class="card-cta">View entries &rarr;</div>
+      </a>
+      <a class="card" href="dossier.html?category=financial">
         <div class="card-tag tag-financial">Financial</div>
         <div class="card-icon">
           <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -105,7 +109,8 @@
         </div>
         <h2>Financial Corruption</h2>
         <p>Insider trading, self-dealing, and the conversion of public office into a personal revenue stream at the expense of the public trust.</p>
-      </div>
+        <div class="card-cta">View entries &rarr;</div>
+      </a>
     </section>
     <div class="cta">
       <a href="dossier.html">Enter the Dossier &rarr;</a>
