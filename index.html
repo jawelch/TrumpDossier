@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Dossier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corruption Dossier</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -18,183 +18,106 @@
     .nav-links { display: flex; gap: 24px; }
     .nav-links a { font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
-    .page-header { border-bottom: 0.5px solid var(--border); padding-bottom: 2rem; margin-bottom: 2rem; }
-    .eyebrow { font-size: 10px; color: var(--gold); letter-spacing: 0.12em; font-weight: 500; margin-bottom: 0.75rem; }
-    h1 { font-size: 1.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--text); margin-bottom: 0.75rem; font-family: Georgia, "Times New Roman", serif; }
-    .subtitle { color: var(--muted); font-size: 0.875rem; line-height: 1.7; max-width: 580px; }
-    .stats { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
-    .stat-num { font-size: 1.25rem; font-weight: 500; color: var(--gold); }
-    .stat-label { font-size: 10px; color: var(--dim); letter-spacing: 0.05em; margin-top: 2px; }
-    .stat-label.cat-pill {
-      display: inline-block;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      padding: 2px 10px;
-      border-radius: 20px;
-      margin-top: 6px;
-    }
-    .stat-label.cat-pill.tag-moral     { background: var(--gold-bg); color: var(--gold);  border: 0.5px solid var(--gold-border); }
-    .stat-label.cat-pill.tag-political { background: #1a0e2a;         color: #a07fd4;    border: 0.5px solid #241636; }
-    .stat-label.cat-pill.tag-financial { background: #0e1a2a;         color: #5a9fd4;    border: 0.5px solid #162436; }
-    .stat-block { text-decoration: none; display: block; transition: opacity 0.15s; }
-    a.stat-block { cursor: pointer; }
-    a.stat-block:hover { opacity: 0.75; }
-    a.stat-block.active .stat-num { color: var(--text); }
-    a.stat-block.active .stat-label:not(.cat-pill) { color: var(--gold); }
-    a.stat-block.active .stat-label.cat-pill { box-shadow: 0 0 0 1px currentColor; }
-    #dossier-list { list-style: none; }
-    .entry { border-bottom: 0.5px solid var(--border-subtle); padding: 1.25rem 0; display: grid; grid-template-columns: 80px 1fr auto; gap: 1rem; align-items: start; }
-    .entry:hover { background: transparent; }
-    .entry-num { font-size: 11px; color: var(--dim); font-weight: 500; padding-top: 2px; font-variant-numeric: tabular-nums; }
-    .entry-date { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 4px; }
-    .entry a { color: var(--text); text-decoration: none; font-size: 0.9rem; line-height: 1.5; transition: color 0.15s; }
-    .entry a:hover { color: var(--gold); }
-    footer { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--border-subtle); font-size: 11px; color: var(--dim); letter-spacing: 0.04em; }
-    footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
-    footer a:hover { color: var(--gold); }
-    .loading { color: var(--dim); font-size: 0.875rem; padding: 2rem 0; }
-
-    /* ── CATEGORY TAGS (list view) ── */
-    .entry-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
-    .entry-tag {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      padding: 1px 8px;
-      border-radius: 20px;
-      line-height: 1.6;
-    }
-    .tag-moral     { background: var(--gold-bg); color: var(--gold);  border: 0.5px solid var(--gold-border); }
-    .tag-political { background: #1a0e2a;         color: #a07fd4;    border: 0.5px solid #241636; }
-    .tag-financial { background: #0e1a2a;         color: #5a9fd4;    border: 0.5px solid #162436; }
-
-    .filter-note { font-size: 11px; color: var(--dim); letter-spacing: 0.04em; margin-top: 1.25rem; }
-    .filter-note a { color: var(--gold); text-decoration: none; }
-    .filter-note a:hover { text-decoration: underline; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; }
+    header { text-align: center; margin-bottom: 5rem; }
+    .eyebrow { font-size: 10px; color: var(--gold); letter-spacing: 0.12em; font-weight: 500; margin-bottom: 1.25rem; }
+    header h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); margin-bottom: 1.5rem; font-family: Georgia, "Times New Roman", serif; }
+    header p { max-width: 680px; margin: 0 auto; color: var(--muted); font-size: 0.95rem; line-height: 1.8; }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 2rem auto; opacity: 0.5; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 4rem; }
+    .card { background: var(--surface); padding: 2.5rem 2rem; text-align: center; transition: background 0.15s; display: block; text-decoration: none; color: inherit; cursor: pointer; }
+    .card:hover { background: #181818; }
+    .card-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; }
+    .card-icon svg { width: 64px; height: 64px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .card h2 { font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; color: var(--text); margin-bottom: 0.75rem; }
+    .card p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
+    .card-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; padding: 2px 10px; border-radius: 20px; margin-bottom: 1rem; }
+    .tag-financial { background: #0e1a2a; color: #5a9fd4; border: 0.5px solid #162436; }
+    .tag-political  { background: #1a0e2a; color: #a07fd4; border: 0.5px solid #241636; }
+    .tag-moral      { background: var(--gold-bg); color: var(--gold); border: 0.5px solid var(--gold-border); }
+    .card-cta { margin-top: 1.25rem; font-size: 10px; color: var(--dim); letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.15s; }
+    .card:hover .card-cta { color: var(--gold); }
+    .cta { text-align: center; }
+    .cta a { display: inline-block; padding: 0.85rem 2.5rem; border: 0.5px solid var(--gold-border); border-radius: 4px; background: var(--gold-bg); color: var(--gold); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; transition: background 0.15s, border-color 0.15s; }
+    .cta a:hover { background: #2a2310; border-color: var(--gold); }
+    footer { text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 0.5px solid var(--border-subtle); font-size: 11px; color: var(--dim); letter-spacing: 0.04em; }
   </style>
 </head>
 <body>
   <nav>
     <a class="nav-logo" href="index.html">THE <span>DOSSIER</span></a>
     <div class="nav-links">
-      <a href="index.html">Introduction</a>
-      <a href="dossier.html" class="active">All entries</a>
+      <a href="index.html" class="active">Introduction</a>
+      <a href="dossier.html">All entries</a>
     </div>
   </nav>
-
   <div class="container">
-    <div class="page-header">
-      <div class="eyebrow" id="page-eyebrow">Complete record</div>
-      <h1 id="page-title">The Dossier</h1>
-      <p class="subtitle" id="page-subtitle">A chronological record of political, financial, and moral corruption. Each entry sourced and documented.</p>
-      <div class="stats" id="stats-row">
-        <a class="stat-block" href="dossier.html" id="total-stat-block">
-          <div class="stat-num" id="entry-count">—</div>
-          <div class="stat-label" id="stat-label">Documented entries</div>
-        </a>
-      </div>
-      <p class="filter-note" id="filter-note" style="display:none;"></p>
+    <header>
+      <div class="eyebrow">A documented record</div>
+      <h1>Corruption Dossier</h1>
+      <div class="divider"></div>
+      <p>Donald Trump's career and effect on the politics of the United States will forever leave a blemish on the tapestry of American history. His record of political, financial, and moral corruption is so overwhelming the American electorate can be forgiven for failing to maintain a precise recollection of it all. The purpose of this site is to create a full account of every unjustifiable infraction of the American spirit committed by the President and his administration. Though his crimes and sins have been well documented through various media organizations, non-profits, judicial, and federal records, this site provides a centralized collection for the ease of the reader.</p>
+    </header>
+    <section class="cards">
+      <a class="card" href="dossier.html?category=political">
+        <div class="card-tag tag-political">Political</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="4" y="58" width="56" height="3" rx="1"/>
+            <rect x="6" y="55" width="18" height="3" rx="0.5"/>
+            <line x1="7" y1="22" x2="7" y2="55"/><line x1="11" y1="22" x2="11" y2="55"/>
+            <line x1="15" y1="22" x2="15" y2="55"/><line x1="19" y1="22" x2="19" y2="55"/>
+            <line x1="6.5" y1="22" x2="19.5" y2="22"/>
+            <rect x="4" y="16" width="20" height="4" rx="0.5"/>
+            <line x1="32" y1="6" x2="32" y2="55"/>
+            <line x1="20" y1="55" x2="44" y2="55"/>
+            <line x1="6" y1="18" x2="32" y2="14"/>
+            <polyline points="40,42 44,36 48,42 52,34 56,40"/>
+          </svg>
+        </div>
+        <h2>Political Corruption</h2>
+        <p>Abuse of authority, regulatory capture, and the manipulation of democratic processes to entrench power and silence accountability.</p>
+        <div class="card-cta">View entries &rarr;</div>
+      </a>
+      <a class="card" href="dossier.html?category=moral">
+        <div class="card-tag tag-moral">Moral</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <line x1="32" y1="8" x2="32" y2="54"/><line x1="22" y1="54" x2="42" y2="54"/>
+            <line x1="8" y1="28" x2="56" y2="16"/>
+            <line x1="8" y1="28" x2="5" y2="42"/><line x1="8" y1="28" x2="16" y2="42"/>
+            <path d="M3,42 Q10.5,49 18,42" fill="none"/>
+            <line x1="56" y1="16" x2="52" y2="26"/><line x1="56" y1="16" x2="60" y2="26"/>
+            <path d="M50,26 Q56,32 62,26" fill="none"/>
+            <circle cx="32" cy="8" r="2.5"/>
+          </svg>
+        </div>
+        <h2>Moral Corruption</h2>
+        <p>Normalization of cruelty, erosion of ethical standards, and the quiet justifications that allow wrongdoing to become routine.</p>
+        <div class="card-cta">View entries &rarr;</div>
+      </a>
+      <a class="card" href="dossier.html?category=financial">
+        <div class="card-tag tag-financial">Financial</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="26" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="21" stroke-width="0.75"/>
+            <path d="M40,18 C40,13 24,13 24,22 C24,31 40,28 40,37 C40,46 24,46 24,42" stroke-width="1.5"/>
+            <line x1="32" y1="10" x2="32" y2="52" stroke-width="1.5"/>
+            <polyline points="14,8 24,18 17,28 30,38 25,48 37,58" stroke="#d4a017" stroke-width="3.5" stroke-linejoin="miter" stroke-linecap="square"/>
+          </svg>
+        </div>
+        <h2>Financial Corruption</h2>
+        <p>Insider trading, self-dealing, and the conversion of public office into a personal revenue stream at the expense of the public trust.</p>
+        <div class="card-cta">View entries &rarr;</div>
+      </a>
+    </section>
+    <div class="cta">
+      <a href="dossier.html">Enter the Dossier &rarr;</a>
     </div>
-
-    <ul id="dossier-list">
-      <li class="loading">Loading entries&hellip;</li>
-    </ul>
-
     <footer>
-      <p><a href="index.html">&larr; Return to introduction</a> &nbsp;&middot;&nbsp; Documentation over outrage. Evidence over rhetoric.</p>
+      <p>Documentation over outrage &nbsp;&middot;&nbsp; Evidence over rhetoric.</p>
     </footer>
   </div>
-
-  <script>
-    // Maps category values in the JSON to display label + CSS class.
-    const CATEGORY_META = {
-      moral:     { label: 'Moral',     class: 'tag-moral' },
-      political: { label: 'Political', class: 'tag-political' },
-      financial: { label: 'Financial', class: 'tag-financial' }
-    };
-
-    function renderTags(categories) {
-      if (!categories || !categories.length) return '';
-      const badges = categories
-        .map(cat => CATEGORY_META[cat.toLowerCase()])
-        .filter(Boolean)
-        .map(meta => '<span class="entry-tag ' + meta.class + '">' + meta.label + '</span>')
-        .join('');
-      return badges ? '<div class="entry-tags">' + badges + '</div>' : '';
-    }
-
-    // Read ?category= from the URL, e.g. dossier.html?category=moral
-    const params = new URLSearchParams(window.location.search);
-    const categoryFilter = (params.get('category') || '').toLowerCase();
-
-    if (categoryFilter && CATEGORY_META[categoryFilter]) {
-      const meta = CATEGORY_META[categoryFilter];
-      document.getElementById('page-eyebrow').textContent = meta.label + ' corruption';
-      document.getElementById('page-title').textContent = meta.label;
-      document.getElementById('page-subtitle').textContent =
-        'All documented entries tagged ' + meta.label.toLowerCase() + '.';
-      const note = document.getElementById('filter-note');
-      note.style.display = 'block';
-      note.innerHTML = 'Filtered by category &nbsp;&middot;&nbsp; <a href="dossier.html">View all entries</a>';
-    } else {
-      document.getElementById('total-stat-block').classList.add('active');
-    }
-
-    fetch('actions/index.json')
-      .then(r => r.json())
-      .then(entries => {
-        const list = document.getElementById('dossier-list');
-
-        const filtered = categoryFilter
-          ? entries.filter(entry =>
-              (entry.categories || []).some(c => c.toLowerCase() === categoryFilter)
-            )
-          : entries;
-
-        document.getElementById('entry-count').textContent = filtered.length;
-
-        // Build per-category counts and append a clickable stat block for each.
-        const statsRow = document.getElementById('stats-row');
-        Object.keys(CATEGORY_META).forEach(key => {
-          const meta = CATEGORY_META[key];
-          const count = entries.filter(entry =>
-            (entry.categories || []).some(c => c.toLowerCase() === key)
-          ).length;
-
-          const a = document.createElement('a');
-          a.className = 'stat-block' + (categoryFilter === key ? ' active' : '');
-          a.href = 'dossier.html?category=' + key;
-          a.innerHTML =
-            '<div class="stat-num">' + count + '</div>' +
-            '<div class="stat-label cat-pill ' + meta.class + '">' + meta.label + '</div>';
-          statsRow.appendChild(a);
-        });
-
-        list.innerHTML = '';
-
-        if (!filtered.length) {
-          list.innerHTML = '<li class="loading">No entries found for this category.</li>';
-          return;
-        }
-
-        filtered.forEach((entry, i) => {
-          const li = document.createElement('li');
-          li.className = 'entry';
-          li.innerHTML =
-            '<div class="entry-num">#' + String(filtered.length - i).padStart(3, '0') + '</div>' +
-            '<div>' +
-              renderTags(entry.categories) +
-              '<div class="entry-date">' + (entry.displaydate || entry.date) + '</div>' +
-              '<a href="actions/' + entry.slug + '">' + entry.title + '</a>' +
-            '</div>';
-          list.appendChild(li);
-        });
-      })
-      .catch(() => {
-        document.getElementById('dossier-list').innerHTML = '<li class="loading">Failed to load entries.</li>';
-      });
-  </script>
 </body>
 </html>
