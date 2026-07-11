@@ -52,6 +52,10 @@
     .tag-moral     { background: var(--gold-bg); color: var(--gold);  border: 0.5px solid var(--gold-border); }
     .tag-political { background: #1a0e2a;         color: #a07fd4;    border: 0.5px solid #241636; }
     .tag-financial { background: #0e1a2a;         color: #5a9fd4;    border: 0.5px solid #162436; }
+
+    .filter-note { font-size: 11px; color: var(--dim); letter-spacing: 0.04em; margin-top: 1.25rem; }
+    .filter-note a { color: var(--gold); text-decoration: none; }
+    .filter-note a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -65,15 +69,16 @@
 
   <div class="container">
     <div class="page-header">
-      <div class="eyebrow">Complete record</div>
-      <h1>The Dossier</h1>
-      <p class="subtitle">A chronological record of political, financial, and moral corruption. Each entry sourced and documented.</p>
+      <div class="eyebrow" id="page-eyebrow">Complete record</div>
+      <h1 id="page-title">The Dossier</h1>
+      <p class="subtitle" id="page-subtitle">A chronological record of political, financial, and moral corruption. Each entry sourced and documented.</p>
       <div class="stats">
         <div>
           <div class="stat-num" id="entry-count">—</div>
-          <div class="stat-label">Documented entries</div>
+          <div class="stat-label" id="stat-label">Documented entries</div>
         </div>
       </div>
+      <p class="filter-note" id="filter-note" style="display:none;"></p>
     </div>
 
     <ul id="dossier-list">
@@ -103,17 +108,46 @@
       return badges ? '<div class="entry-tags">' + badges + '</div>' : '';
     }
 
+    // Read ?category= from the URL, e.g. dossier.html?category=moral
+    const params = new URLSearchParams(window.location.search);
+    const categoryFilter = (params.get('category') || '').toLowerCase();
+
+    if (categoryFilter && CATEGORY_META[categoryFilter]) {
+      const meta = CATEGORY_META[categoryFilter];
+      document.getElementById('page-eyebrow').textContent = meta.label + ' corruption';
+      document.getElementById('page-title').textContent = meta.label;
+      document.getElementById('page-subtitle').textContent =
+        'All documented entries tagged ' + meta.label.toLowerCase() + '.';
+      document.getElementById('stat-label').textContent = meta.label + ' entries';
+      const note = document.getElementById('filter-note');
+      note.style.display = 'block';
+      note.innerHTML = 'Filtered by category &nbsp;&middot;&nbsp; <a href="dossier.html">View all entries</a>';
+    }
+
     fetch('actions/index.json')
       .then(r => r.json())
       .then(entries => {
         const list = document.getElementById('dossier-list');
-        document.getElementById('entry-count').textContent = entries.length;
+
+        const filtered = categoryFilter
+          ? entries.filter(entry =>
+              (entry.categories || []).some(c => c.toLowerCase() === categoryFilter)
+            )
+          : entries;
+
+        document.getElementById('entry-count').textContent = filtered.length;
         list.innerHTML = '';
-        entries.forEach((entry, i) => {
+
+        if (!filtered.length) {
+          list.innerHTML = '<li class="loading">No entries found for this category.</li>';
+          return;
+        }
+
+        filtered.forEach((entry, i) => {
           const li = document.createElement('li');
           li.className = 'entry';
           li.innerHTML =
-            '<div class="entry-num">#' + String(entries.length - i).padStart(3, '0') + '</div>' +
+            '<div class="entry-num">#' + String(filtered.length - i).padStart(3, '0') + '</div>' +
             '<div>' +
               renderTags(entry.categories) +
               '<div class="entry-date">' + (entry.displaydate || entry.date) + '</div>' +
