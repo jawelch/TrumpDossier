@@ -96,7 +96,7 @@
     function renderTags(categories) {
       if (!categories || !categories.length) return '';
       const badges = categories
-        .map(cat => CATEGORY_META[cat])
+        .map(cat => CATEGORY_META[cat.toLowerCase()])
         .filter(Boolean)
         .map(meta => '<span class="entry-tag ' + meta.class + '">' + meta.label + '</span>')
         .join('');
