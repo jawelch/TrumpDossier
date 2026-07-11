@@ -37,6 +37,21 @@
     footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
     footer a:hover { color: var(--gold); }
     .loading { color: var(--dim); font-size: 0.875rem; padding: 2rem 0; }
+
+    /* ── CATEGORY TAGS (list view) ── */
+    .entry-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+    .entry-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 1px 8px;
+      border-radius: 20px;
+      line-height: 1.6;
+    }
+    .tag-moral     { background: var(--gold-bg); color: var(--gold);  border: 0.5px solid var(--gold-border); }
+    .tag-political { background: #1a0e2a;         color: #a07fd4;    border: 0.5px solid #241636; }
+    .tag-financial { background: #0e1a2a;         color: #5a9fd4;    border: 0.5px solid #162436; }
   </style>
 </head>
 <body>
@@ -71,6 +86,23 @@
   </div>
 
   <script>
+    // Maps category values in the JSON to display label + CSS class.
+    const CATEGORY_META = {
+      moral:     { label: 'Moral',     class: 'tag-moral' },
+      political: { label: 'Political', class: 'tag-political' },
+      financial: { label: 'Financial', class: 'tag-financial' }
+    };
+
+    function renderTags(categories) {
+      if (!categories || !categories.length) return '';
+      const badges = categories
+        .map(cat => CATEGORY_META[cat])
+        .filter(Boolean)
+        .map(meta => '<span class="entry-tag ' + meta.class + '">' + meta.label + '</span>')
+        .join('');
+      return badges ? '<div class="entry-tags">' + badges + '</div>' : '';
+    }
+
     fetch('actions/index.json')
       .then(r => r.json())
       .then(entries => {
@@ -83,6 +115,7 @@
           li.innerHTML =
             '<div class="entry-num">#' + String(entries.length - i).padStart(3, '0') + '</div>' +
             '<div>' +
+              renderTags(entry.categories) +
               '<div class="entry-date">' + (entry.displaydate || entry.date) + '</div>' +
               '<a href="actions/' + entry.slug + '">' + entry.title + '</a>' +
             '</div>';
