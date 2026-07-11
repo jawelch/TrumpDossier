@@ -1,260 +1,303 @@
 [
-   {
-  "title": "Jared Kushner's $2 Billion Saudi Investment, Middle East Diplomacy Role",
-  "date": "2022-04",
-  "displaydate": "April 2022 - Present",
-  "slug": "kushner-saudi.html"
- },
   {
-  "title": "Trump Disparages Pope, Posts AI Image of Himself as Jesus Christ",
-  "date": "2026-04",
-  "displaydate": "April 2026",
-  "slug": "pope-comments.html"
- },
+    "title": "Jared Kushner's $2 Billion Saudi Investment, Middle East Diplomacy Role",
+    "date": "2022-04",
+    "displaydate": "April 2022 - Present",
+    "slug": "kushner-saudi.html",
+    "categories": ["Financial"]
+  },
   {
-  "title": "Republican-Led Senate Panel Finds Trump Campaign Participated in and Benefited from Russian Interference",
-  "date": "2020-08",
-  "displaydate": "August 2020",
-  "slug": "manafort-russia.html"
- },
- {
-  "title": "Trump Threatens to Destroy 'A Whole Civilization' During Iran War",
-  "date": "2026-04",
-  "displaydate": "April 2026",
-  "slug": "iran-threat.html"
- },
- {
-  "title": "Trump defended Putin, rejected his own intelligence agencies findings regarding 2016 Election interference",
-  "date": "2018-07",
-  "displaydate": "July 2018",
-  "slug": "helsinki-putin.html"
- },
- {
-   "title": "Trump family investments in drone companies days before start of Iran War",
-  "date": "2026-02",
-  "displaydate": "February 2026",
-  "slug": "drone-contracts.html"
- },
- {
-  "title": "U.S. Airstrike on Iranian School Kills 168+ Children",
-  "date": "2026-03",
-  "displaydate": "March 2026",
-  "slug": "us-airstrike-on-iranian-school-kills-168-children.html"
-},
-{
-  "title": "Trump Pardons Erase Over $1.5 Billion in Criminal Penalties",
-  "date": "2025-2026",
-  "displaydate": "2025–2026",
-  "slug": "trump-pardons-erase-1-5-billion-criminal-penalties.html"
-},
-{
-  "title": "Pressure Campaign to Block Congressional Release of Epstein Information",
-  "date": "2026-02",
-  "displaydate": "February 2026",
-  "slug": "pressure-campaign-block-epstein-files-release.html"
-},
+    "title": "Trump Disparages Pope, Posts AI Image of Himself as Jesus Christ",
+    "date": "2026-04",
+    "displaydate": "April 2026",
+    "slug": "pope-comments.html",
+    "categories": ["Moral"]
+  },
+  {
+    "title": "Republican-Led Senate Panel Finds Trump Campaign Participated in and Benefited from Russian Interference",
+    "date": "2020-08",
+    "displaydate": "August 2020",
+    "slug": "manafort-russia.html",
+    "categories": ["Political"]
+  },
+  {
+    "title": "Trump Threatens to Destroy 'A Whole Civilization' During Iran War",
+    "date": "2026-04",
+    "displaydate": "April 2026",
+    "slug": "iran-threat.html",
+    "categories": ["Moral"]
+  },
+  {
+    "title": "Trump defended Putin, rejected his own intelligence agencies findings regarding 2016 Election interference",
+    "date": "2018-07",
+    "displaydate": "July 2018",
+    "slug": "helsinki-putin.html",
+    "categories": ["Political"]
+  },
+  {
+    "title": "Trump family investments in drone companies days before start of Iran War",
+    "date": "2026-02",
+    "displaydate": "February 2026",
+    "slug": "drone-contracts.html",
+    "categories": ["Financial"]
+  },
+  {
+    "title": "U.S. Airstrike on Iranian School Kills 168+ Children",
+    "date": "2026-03",
+    "displaydate": "March 2026",
+    "slug": "us-airstrike-on-iranian-school-kills-168-children.html",
+    "categories": ["Moral"]
+  },
+  {
+    "title": "Trump Pardons Erase Over $1.5 Billion in Criminal Penalties",
+    "date": "2025-2026",
+    "displaydate": "2025–2026",
+    "slug": "trump-pardons-erase-1-5-billion-criminal-penalties.html",
+    "categories": ["Financial", "Moral"]
+  },
+  {
+    "title": "Pressure Campaign to Block Congressional Release of Epstein Information",
+    "date": "2026-02",
+    "displaydate": "February 2026",
+    "slug": "pressure-campaign-block-epstein-files-release.html",
+    "categories": ["Political", "Moral"]
+  },
   {
     "title": "Trump Push to Nationalize Elections",
     "date": "2026-02",
     "displaydate": "February 2026",
-    "slug": "trump-push-to-nationalize-elections.html"
+    "slug": "trump-push-to-nationalize-elections.html",
+    "categories": ["Political"]
   },
   {
     "title": "Trump Posts Racist Video Depicting the Obamas",
     "date": "2026-02",
     "displaydate": "February 2026",
-    "slug": "trump-racist-video-obamas.html"
+    "slug": "trump-racist-video-obamas.html",
+    "categories": ["Moral"]
   },
   {
     "title": "Withholds Gateway Funding Until Penn Station and Dulles Airport Are Renamed 'Trump'",
     "date": "2026-01",
     "displaydate": "January 2026",
-    "slug": "withholds-gateway-funding-for-trump-renaming-demand.html"
+    "slug": "withholds-gateway-funding-for-trump-renaming-demand.html",
+    "categories": ["Political"]
   },
   {
     "title": "Cuban Oil Embargo and Risk of Humanitarian Crisis",
     "date": "2026-01",
     "displaydate": "January 2026",
-    "slug": "cuban-oil-embargo-humanitarian-crisis-2026.html"
+    "slug": "cuban-oil-embargo-humanitarian-crisis-2026.html",
+    "categories": ["Moral"]
   },
   {
     "title": "AI Generated Image of Nekima Levy Armstrong Arrest",
     "date": "2026-01",
     "displaydate": "January 2026",
-    "slug": "ai-generated-image-nekima-levy-armstrong-arrest.html"
+    "slug": "ai-generated-image-nekima-levy-armstrong-arrest.html",
+    "categories": ["Moral"]
   },
   {
     "title": "Administration Orders Prosecutors to Stop Renee Good Investigation",
     "date": "2026-01",
     "displaydate": "January 2026",
-    "slug": "administration-orders-prosecutors-to-stop-renee-good-investigation.html"
+    "slug": "administration-orders-prosecutors-to-stop-renee-good-investigation.html",
+    "categories": ["Political"]
   },
   {
     "title": "Donald Trump Jr. Pentagon Loan Conflict",
     "date": "2025-12",
     "displaydate": "December 2025",
-    "slug": "donald-trump-jr-pentagon-loan-conflict.html"
+    "slug": "donald-trump-jr-pentagon-loan-conflict.html",
+    "categories": ["Financial"]
   },
   {
     "title": "Trump-Branded Wine Sold in Coast Guard Stores",
     "date": "2025-11",
     "displaydate": "November 2025",
-    "slug": "trump-branded-wine-sold-in-coast-guard-stores.html"
+    "slug": "trump-branded-wine-sold-in-coast-guard-stores.html",
+    "categories": ["Financial"]
   },
   {
     "title": "Targets Democratic Congress Members With Investigation, Calls for Their Execution",
     "date": "2025-11",
     "displaydate": "November 2025",
-    "slug": "targets-democratic-congress-members-investigation-calls-for-execution.html"
+    "slug": "targets-democratic-congress-members-investigation-calls-for-execution.html",
+    "categories": ["Political"]
   },
   {
     "title": "Partisan TSA Messaging by Secretary of Homeland Security (Potential Hatch Act Violation)",
     "date": "2025-10",
     "displaydate": "October 2025",
-    "slug": "secretary-of-homeland-security-kristi-noem-makes-partisan-tsa-message-potential-hatch-act-violation.html"
+    "slug": "secretary-of-homeland-security-kristi-noem-makes-partisan-tsa-message-potential-hatch-act-violation.html",
+    "categories": ["Political"]
   },
   {
     "title": "Threats to Investigate and Deport Zohran Mamdani",
     "date": "2025-07",
     "displaydate": "July 2025",
-    "slug": "trump-administration-threatens-to-investigate-deporting-zohran-mamdani.html"
+    "slug": "trump-administration-threatens-to-investigate-deporting-zohran-mamdani.html",
+    "categories": ["Political"]
   },
   {
     "title": "Leaked Signal Group Chat",
     "date": "2025-03",
     "displaydate": "March 2025",
-    "slug": "leaked-signal-groupchat.html"
+    "slug": "leaked-signal-groupchat.html",
+    "categories": ["Political"]
   },
   {
     "title": "Attempts to Overturn Birthright Citizenship",
     "date": "2025-01",
     "displaydate": "January 2025",
-    "slug": "attempts-to-overturn-birthright-citizenship.html"
+    "slug": "attempts-to-overturn-birthright-citizenship.html",
+    "categories": ["Political"]
   },
   {
     "title": "Trump United Arab Emirates $500 Million Crypto Deal",
     "date": "2025-01",
     "displaydate": "January 2025",
-    "slug": "trump-uae-500-million-crypto-deal.html"
+    "slug": "trump-uae-500-million-crypto-deal.html",
+    "categories": ["Financial"]
   },
   {
     "title": "Former Trump Officials Warn of “Absolute, Unchecked Power” in a Second Trump Term",
     "date": "2024-10-25",
     "displaydate": "October 25, 2024",
-    "slug": "former-trump-officials-warn-absolute-unchecked-power.html"
+    "slug": "former-trump-officials-warn-absolute-unchecked-power.html",
+    "categories": ["Political"]
   },
   {
     "title": "John Kelly Warns Trump Meets the Definition of a Fascist",
     "date": "2024-10-22",
     "displaydate": "October 22, 2024",
-    "slug": "john-kelly-warns-trump-meets-definition-of-fascist.html"
+    "slug": "john-kelly-warns-trump-meets-definition-of-fascist.html",
+    "categories": ["Political"]
   },
   {
     "title": "Trump’s Support for North Carolina Lieutenant Governor Mark Robinson",
     "date": "2024-03-01",
     "displaydate": "March 2024",
-    "slug": "trump-endorses-mark-robinson-north-carolina-2024.html"
+    "slug": "trump-endorses-mark-robinson-north-carolina-2024.html",
+    "categories": ["Moral"]
   },
   {
     "title": "January 6 Attack on the U.S. Capitol",
     "date": "2021-01-06",
     "displaydate": "January 6, 2021",
-    "slug": "january-6-attack-on-the-u-s-capitol.html"
+    "slug": "january-6-attack-on-the-u-s-capitol.html",
+    "categories": ["Political", "Moral"]
   },
   {
     "title": "Attempt to Install Jeffrey Clark as Acting Attorney General",
     "date": "2021-01",
     "displaydate": "January 2021",
-    "slug": "attempt-to-install-jeffrey-clark-as-acting-attorney-general.html"
+    "slug": "attempt-to-install-jeffrey-clark-as-acting-attorney-general.html",
+    "categories": ["Political"]
   },
   {
     "title": "Creation and Promotion of Alternate Elector Slates",
     "date": "2020-12",
     "displaydate": "December 2020",
-    "slug": "creation-and-promotion-of-alternate-elector-slates.html"
+    "slug": "creation-and-promotion-of-alternate-elector-slates.html",
+    "categories": ["Political"]
   },
   {
     "title": "Efforts to Facilitate Unauthorized Access to Voting Equipment",
     "date": "2020-12",
     "displaydate": "December 2020",
-    "slug": "efforts-to-facilitate-unauthorized-access-to-local-voting-equipment.html"
+    "slug": "efforts-to-facilitate-unauthorized-access-to-local-voting-equipment.html",
+    "categories": ["Political"]
   },
   {
     "title": "Pressure on Georgia Election Investigator Frances Watson to overturn 2024 Election",
     "date": "2020-12",
     "displaydate": "December 2020",
-    "slug": "pressure-on-georgia-election-investigator-frances-watson.html"
+    "slug": "pressure-on-georgia-election-investigator-frances-watson.html",
+    "categories": ["Political"]
   },
   {
     "title": "Pressuring the Georgia Attorney General to 'Find' Votes",
     "date": "2020-12",
     "displaydate": "December 2020",
-    "slug": "pressuring-georgia-attorney-general-to-find-new-votes.html"
+    "slug": "pressuring-georgia-attorney-general-to-find-new-votes.html",
+    "categories": ["Political"]
   },
   {
     "title": "Pressuring the Department of Justice to Declare the Election Corrupt",
     "date": "2020-12",
     "displaydate": "December 2020",
-    "slug": "pressuring-the-department-of-justice-to-declare-the-election-corrupt.html"
+    "slug": "pressuring-the-department-of-justice-to-declare-the-election-corrupt.html",
+    "categories": ["Political"]
   },
   {
     "title": "Coordinated Disinformation Campaign Regarding the 2020 Election",
     "date": "2020-11",
     "displaydate": "November–December 2020",
-    "slug": "coordinated-disinformation-campaign.html"
+    "slug": "coordinated-disinformation-campaign.html",
+    "categories": ["Political"]
   },
   {
     "title": "Pressure on State Election Officials in Arizona, Michigan, and Pennsylvania to overturn 2024 Election",
     "date": "2020-11",
     "displaydate": "November–December 2020",
-    "slug": "pressure-on-state-officials-az-mi-pa.html"
+    "slug": "pressure-on-state-officials-az-mi-pa.html",
+    "categories": ["Political"]
   },
   {
     "title": "Fundraising Based on False Election Claims",
     "date": "2020-01",
     "displaydate": "2020-2022",
-    "slug": "fundraising-based-on-false-election-claims.html"
+    "slug": "fundraising-based-on-false-election-claims.html",
+    "categories": ["Political"]
   },
   {
     "title": "Private Praise of Adolf Hitler",
     "date": "2018-01",
     "displaydate": "2018–2020",
-    "slug": "private-praise-of-hitler.html"
+    "slug": "private-praise-of-hitler.html",
+    "categories": ["Moral"]
   },
   {
     "title": "VICE PRESIDENT VANCE COMPARES TRUMP TO HITLER (2016)",
     "date": "2016-10-01",
     "displaydate": "2016",
-    "slug": "vance-compares-trump-to-hitler-2016.html"
+    "slug": "vance-compares-trump-to-hitler-2016.html",
+    "categories": ["Moral"]
   },
   {
-  "title": "“Grab ’Em by the Pussy” Recording",
-  "date": "2016-10-07",
-  "displaydate": "October 7, 2016",
-  "slug": "access-hollywood-tape-2005.html"
+    "title": "“Grab ’Em by the Pussy” Recording",
+    "date": "2016-10-07",
+    "displaydate": "October 7, 2016",
+    "slug": "access-hollywood-tape-2005.html",
+    "categories": ["Moral"]
   },
   {
     "title": "Trump’s Disparagement of John McCain, Disabled Veterans, and Troops Killed in Action",
     "date": "2015-07-18",
     "displaydate": "July 18, 2015 (comments); reporting 2024",
-    "slug": "trump-disparagement-of-mccain-veterans-and-fallen-troops.html"
+    "slug": "trump-disparagement-of-mccain-veterans-and-fallen-troops.html",
+    "categories": ["Moral"]
   },
   {
     "title": "Documented Record of False Statements",
     "date": "2015-01",
     "displaydate": "2015-2020",
-    "slug": "lying-record.html"
+    "slug": "lying-record.html",
+    "categories": ["Moral"]
   },
   {
     "title": "Relationship with Congressman Matt Gaetz",
     "date": "2017-01",
     "displaydate": "2017-2024",
-    "slug": "relationship-with-congressman-matt-gaetz.html"
+    "slug": "relationship-with-congressman-matt-gaetz.html",
+    "categories": ["Moral"]
   },
   {
     "title": "Racist Obama Birther Movement",
     "date": "2011-01",
     "displaydate": "2011",
-    "slug": "racist-obama-birther-movement.html"
+    "slug": "racist-obama-birther-movement.html",
+    "categories": ["Moral"]
   }
 ]
