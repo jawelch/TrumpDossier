@@ -196,6 +196,33 @@ main.content h2 {
   border-top: 0.5px solid var(--border);
 }
 
+/* ── TABLE (for structured comparisons, e.g. issue/law tables) ── */
+main.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 2rem;
+  font-size: 0.85rem;
+}
+main.content th {
+  text-align: left;
+  padding: 0.6rem 0.9rem 0.6rem 0;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 0.5px solid var(--border);
+}
+main.content td {
+  text-align: left;
+  padding: 0.75rem 0.9rem 0.75rem 0;
+  color: var(--body-text);
+  line-height: 1.65;
+  border-bottom: 0.5px solid var(--border-subtle);
+  vertical-align: top;
+}
+main.content tr:last-child td { border-bottom: none; }
+
 /* ── SOURCES BLOCK (built by entry.js) ── */
 main.content .sources-block {
   display: block;
