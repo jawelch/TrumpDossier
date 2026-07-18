@@ -196,6 +196,21 @@ main.content h2 {
   border-top: 0.5px solid var(--border);
 }
 
+/* ── LISTS ── */
+main.content ul {
+  margin: 0 0 1.5rem 1.25rem;
+  padding: 0;
+}
+main.content li {
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0.6rem;
+}
+main.content li:last-child {
+  margin-bottom: 0;
+}
+
 /* ── TABLE (for structured comparisons, e.g. issue/law tables) ── */
 main.content table {
   width: 100%;
